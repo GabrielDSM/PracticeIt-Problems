@@ -1,5 +1,5 @@
 // Gabriel Menescal
-// This file contains various solutions to Recursive practice it problems
+// This file contains various solutions to Recursive practice-it problems
 
 public class RecursiveProblems {
    // Writes a method writeSequence that accepts an integer n as a parameter and prints 
