@@ -57,4 +57,27 @@ public class RecursiveProblems {
       }
       return answer;
    }
+   
+   // A method that accepts an integer parameter n and prints the first n integers starting 
+   // with 1 in sequential order, separated by commas. E.g. writeNums(5); --> Output: 1, 2, 3, 4, 5
+   public void writeNums(int n) {
+      if (n < 1) {
+         throw new IllegalArgumentException();
+      }
+      writeNums(1, n);
+   }
+   
+   private void writeNums(int curr, int n) {
+      if (curr <= n) {
+         if (curr == 1) {
+            System.out.print("1");
+            curr++;
+            writeNums(curr, n);
+         } else {
+            System.out.print(", " + curr);
+            curr++;
+            writeNums(curr, n);
+         }
+      }
+   }
 }
