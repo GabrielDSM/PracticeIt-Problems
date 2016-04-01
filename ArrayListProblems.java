@@ -53,4 +53,16 @@ public class ArrayListProblems {
          list.set(0,min);
       }
    }
+   
+   // A method that takes as a parameter a sorted ArrayList of Strings and that eliminates any duplicates from the list.
+   // E.g. ["be", "be", "is", "not", "or", "question", "that", "the", "to", "to"] --> Output: [be, is, not, or, question, that, the, to]
+   public void removeDuplicates(ArrayList<String> list) {
+      for (int i = 0; i < list.size(); i++) {
+         for (int j = list.size() - 1; j > i; j--) {
+            if (list.get(i) == list.get(j)) {
+               list.remove(j);
+            }
+         }
+      }
+   }
 }
