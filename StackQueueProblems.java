@@ -58,4 +58,35 @@ public class StackQueueProblems {
          s.push(s.push(q.remove()));
       }
    }
+   
+   // A method hat takes a stack of integers as a parameter and returns a copy of the original stack (i.e., a new stack 
+   // with the same values as the original, stored in the same order as the original). Your method should create the 
+   // new stack and fill it up with the same values that are stored in the original stack. It is not acceptable to return 
+   // the same stack passed to the method; you must create, fill, and return a new stack. The original stack must be restored 
+   // to its original state and you will return the new independent stack that is in the same state. You may use one queue as 
+   // auxiliary storage. E.g. bottom [3, 7, 1, 14, 9] top --> Output: Stack returned [3, 7, 1, 14, 9]/Orginial Stack [3, 7, 1, 14, 9]
+   public Stack<Integer> copyStack(Stack<Integer> s) {
+      Queue<Integer> q = new LinkedList<Integer>();
+      Stack<Integer> result = new Stack<Integer>();
+      int size = s.size();
+      while (!s.isEmpty()) {
+         q.add(s.pop());
+      }
+      while (!q.isEmpty()) {
+         s.push(q.remove());
+      }
+      while (!s.isEmpty()) {
+         int n = s.pop();
+         q.add(n);
+         q.add(n);
+      }
+      for (int i = 0; i < size; i++) {
+         result.push(q.remove());
+         q.add(q.remove());
+      }
+      while (!q.isEmpty()) {
+         s.push(q.remove());
+      }
+      return result;
+   }
 }
