@@ -40,4 +40,22 @@ public class StackQueueProblems {
          s.push(q.remove());
       }
    }
+   
+   // A method that takes a stack of integers as a parameter and replaces every value in the stack with two occurrences 
+   // of that value. E.g. bottom [3, 7, 1, 14, 9] top --> Output: [3, 3, 7, 7, 1, 1, 14, 14, 9, 9]
+   public void stutter(Stack<Integer> s) {
+      Queue<Integer> q = new LinkedList<Integer>();
+      while (!s.isEmpty()) {
+         q.add(s.pop());
+      }
+      while (!q.isEmpty()) {
+         s.push(q.remove());
+      }
+      while (!s.isEmpty()) {
+         q.add(s.pop());
+      }
+      while (!q.isEmpty()) {
+         s.push(s.push(q.remove()));
+      }
+   }
 }
