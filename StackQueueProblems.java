@@ -89,4 +89,32 @@ public class StackQueueProblems {
       }
       return result;
    }
+   
+   // A method that takes as parameters two stacks of integers and returns true if the two stacks
+   // are equal and that returns false otherwise. To be considered equal, the two stacks would 
+   // have to store the same sequence of integer values in the same order. Your method is to 
+   // examine the two stacks but must return them to their original state before terminating. You
+   // may use one stack as auxiliary storage.
+   public boolean equals(Stack<Integer> s1, Stack<Integer> s2) {
+      Stack<Integer> temp = new Stack<Integer>();
+      if (s1.size() != s2.size()) {
+         return false;
+      }
+      int size = s1.size();
+      boolean result = true;
+      while (result && !s1.isEmpty()) {
+         int n1 = s1.pop();
+         int n2 = s2.pop();
+         temp.push(n1);
+         temp.push(n2);
+         if (n1 != n2) {
+            result = false;
+         }
+      }
+      while (!temp.isEmpty()) {
+         s2.push(temp.pop());
+         s1.push(temp.pop());
+      }
+      return result;
+   }
 }
