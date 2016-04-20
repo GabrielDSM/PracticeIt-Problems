@@ -80,4 +80,13 @@ public class RecursiveProblems {
          }
       }
    }
+   
+   public void pow(int x, int y) {
+      if(n == 0) {
+         return 1;
+      } else {
+         return x * pow(x, y-1);
+      }
+      
+   }
 }
