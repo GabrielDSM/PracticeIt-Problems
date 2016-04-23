@@ -81,8 +81,10 @@ public class RecursiveProblems {
       }
    }
    
-   public void pow(int x, int y) {
-      if(n == 0) {
+   // A method that accects two integers as parameters and uses them to calculate the first parameter
+   // to the power of the second parameter. E.g. pow(2,4) --> Output: 16
+   public int pow(int x, int y) {
+      if (n == 0) {
          return 1;
       } else {
          return x * pow(x, y-1);
