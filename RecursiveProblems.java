@@ -46,7 +46,7 @@ public class RecursiveProblems {
       if (n < 0) {
          throw new IllegalArgumentException();
       }
-      n = (int) Math.pow(2,n);
+      n = (int) Math.pow(2, n);
       return starString("", n);
    }
    
