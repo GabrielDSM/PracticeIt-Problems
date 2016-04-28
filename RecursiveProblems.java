@@ -102,4 +102,13 @@ public class RecursiveProblems {
          reutrn n * factorial(n - 1);
       }
    }
+   
+   public void stutter(Stack<Integer> s) {
+      if (!s.isEmpty()) {
+         int n = s.pop();
+         stutter(s);
+         s.push(n);
+         s.push(n);
+      }
+   }
 }
