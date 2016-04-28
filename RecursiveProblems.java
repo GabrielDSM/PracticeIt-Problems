@@ -92,6 +92,8 @@ public class RecursiveProblems {
       
    }
    
+   // A method that takes in a given number (n) and return the factorial of that number through
+   // recursion. E.g. factorial(5) --> Output: 120
    public int factorial(int n) {
       if (n < 0) {
          throw new IllegalArgumentException("Invalid number entered.");
@@ -103,6 +105,9 @@ public class RecursiveProblems {
       }
    }
    
+   // A method that takes in a stack of integers (easily adjusted for other data types) and doubles
+   // each of the elements in the stack while preserving the original order.
+   // E.g. [1,2,3,4] --> Output: [1,1,2,2,3,3,4,4]
    public void stutter(Stack<Integer> s) {
       if (!s.isEmpty()) {
          int n = s.pop();
