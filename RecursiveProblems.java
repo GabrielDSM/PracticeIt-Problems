@@ -91,4 +91,15 @@ public class RecursiveProblems {
       }
       
    }
+   
+   public int factorial(int n) {
+      if (n < 0) {
+         throw new IllegalArgumentException("Invalid number entered.");
+      }
+      if (n == 0) {
+         return 1;
+      } else {
+         reutrn n * factorial(n - 1);
+      }
+   }
 }
