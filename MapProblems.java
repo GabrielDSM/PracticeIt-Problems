@@ -17,4 +17,20 @@ public class MapProblems {
       }
       return result;
    }
+   
+   // A method that takes a List<String> and, using a Map<String, Integer>, returns true whether
+   // any single string occurs at least 3 times, otherwise returns false
+   public boolean contains3(List<String> list) {
+      Map<String, Integer> map = new HashSet<String, Integer>();
+      for (String str : list) {
+         if (!map.containsKey(str)) {
+            map.put(str, 0);
+         }
+         map.put(str, map.get(str)++);
+         if (map.get(str) >= 3) {
+            return true;
+         }
+      }
+      return false;
+   }
 }
