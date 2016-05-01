@@ -33,4 +33,17 @@ public class MapProblems {
       }
       return false;
    }
+   
+   // A method that take a Set<String> and returns a Map<Integer, Set<String>> which maps word length
+   // to the words of that particular length which were in the original Set.
+   public Map<Integer, Set<String>> split(Set<String> set) {
+      Map<Integer, Set<String>> map = new TreeMap<Integer, Set<String>>();
+      for (String str : set) {
+         if (!map.containsKey(str.length())) {
+            map.put(str.length(), new TreeSet<String>());
+         }
+         map.get(str.length()).add(str);
+      }
+      return map;
+   }
 }
